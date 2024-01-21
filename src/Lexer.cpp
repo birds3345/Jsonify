@@ -2,12 +2,12 @@
 
 #include <cctype>
 
-static inline bool isNewline(char c)
+inline bool isNewline(char c)
 {
 	return c == '\n';
 }
 
-static inline bool isEscape(char c)
+inline bool isEscape(char c)
 {
 	return
 		c == '\n' ||
