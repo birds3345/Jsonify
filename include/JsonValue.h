@@ -56,6 +56,7 @@ namespace Jsonify
 		bool operator!=(const JsonValue& other) const;
 
 		//map
+		JsonValue& getOrDefault(const std::string& key, const JsonValue& defaultValue);
 		JsonValue& operator[](const std::string& key);
 		const JsonValue& operator[](const std::string& key) const;
 		void remove(const std::string& key);

@@ -227,6 +227,16 @@ namespace Jsonify
 		return !(*this == other);
 	}
 
+	JsonValue& JsonValue::getOrDefault(const std::string& key, const JsonValue& defaultValue)
+	{
+		setType(Type::Dictionary);
+
+		if (!m.contains(key))
+			m[key] = defaultValue;
+
+		return m[key];
+	}
+
 	JsonValue& JsonValue::operator[](const std::string& key)
 	{
 		setType(Type::Dictionary);

@@ -1,19 +1,9 @@
-workspace "Jsonify"
-	architecture "x64"
-
-	configurations {
-		"Debug",
-		"Release",
-	}
-
 project "Jsonify"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++20"
 
-	includedirs {
-		"include"
-	}
+	includedirs {"include"}
 
 	targetdir "bin/%{cfg.buildcfg}"
 	objdir "obj/%{cfg.buildcfg}"
