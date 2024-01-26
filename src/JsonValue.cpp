@@ -130,7 +130,7 @@ namespace Jsonify
 
 	bool JsonValue::isTruthful() const
 	{
-		return type == Type::Boolean && b || type != Type::Null;
+		return type == Type::Boolean ? b : type != Type::Null;
 	}
 
 	JsonValue& JsonValue::operator=(JsonValue&& other) noexcept
