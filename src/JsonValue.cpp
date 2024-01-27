@@ -231,7 +231,7 @@ namespace Jsonify
 	{
 		setType(Type::Dictionary);
 
-		if (!m.contains(key))
+		if (!m.contains(key) || m[key].isNull())
 			m[key] = defaultValue;
 
 		return m[key];
