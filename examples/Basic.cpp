@@ -15,7 +15,7 @@ int main()
 
 	val["var3"].push_back(dict);
 
-	std::cout << val.getOrDefault("var4", 50).as<int>() << std::endl; //50
+	std::cout << val.getOrDefault("var4", 50.32).as<double>() << std::endl; //50.32
 
 	Jsonify::StringWriter writer({
 		.pretty = true,
@@ -27,13 +27,13 @@ int main()
 	/*
 	{
 	   "var1" : "example",
-	   "var2" : 4.000000,
+	   "var2" : 4,
 	   "var3" : [false, {
 		  "a" : {
 			 "b" : null
 		  }
 	   }],
-	   "var4" : 50.000000
+	   "var4" : 50.32
 	}
 	*/
 	std::cout << out << std::endl;
@@ -53,13 +53,13 @@ int main()
 	/*
 	{
 	   "var1" : "example",
-	   "var2" : 4.000000,
+	   "var2" : 4,
 	   "var3" : [false, {
 		  "a" : {
 			 "b" : null
 		  }
 	   }],
-	   "var4" : 50.000000
+	   "var4" : 50.32
 	}
 	*/
 	std::cout << out2 << std::endl;

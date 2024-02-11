@@ -1,5 +1,7 @@
 #include "StringWriter.h"
 
+#include <format>
+
 inline void appendIndents(std::string& out, int indents)
 {
 	for (int i = 0; i < indents; i++)
@@ -102,7 +104,7 @@ namespace Jsonify
 		}
 
 		case JsonValue::Type::Number:
-			out.append(std::to_string(value.n));
+			out.append(std::format("{}", value.n));
 			break;
 		}
 	}
