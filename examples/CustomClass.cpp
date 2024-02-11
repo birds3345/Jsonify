@@ -37,7 +37,7 @@ int main()
 	std::string out;
 	writer.write(vec, out);
 
-	std::cout << out << std::endl; //[1.000000, 4.000000, 2.000000]
+	std::cout << out << std::endl; //[1, 4, 2]
 
 	Vector3 deserialized = vec.as<Vector3>();
 
