@@ -14,6 +14,16 @@ namespace Jsonify
 	public:
 		typedef std::unordered_map<std::string, JsonValue>::iterator Iterator;
 
+		enum class Type
+		{
+			String,
+			Number,
+			Dictionary,
+			Array,
+			Boolean,
+			Null,
+		};
+
 		struct Null
 		{
 		};
@@ -40,6 +50,8 @@ namespace Jsonify
 		JsonValue(const JsonValue& other);
 		JsonValue(JsonValue&& other) noexcept;
 		
+		void setType(Type type);
+		Type getType() const;
 
 		bool isString() const;
 		bool isNumber() const;
@@ -95,18 +107,7 @@ namespace Jsonify
 		friend class StringWriter;
 		friend class StringReader;
 	private:
-		enum class Type
-		{
-			String,
-			Number,
-			Dictionary,
-			Array,
-			Boolean,
-			Null,
-		};
-
 		Type type;
-		void setType(Type type);
 	
 		union
 		{

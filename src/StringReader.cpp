@@ -114,6 +114,7 @@ namespace Jsonify
 		lexer.nextToken();
 
 		JsonValue arr;
+		arr.setType(JsonValue::Type::Array);
 
 		while (!lexer.isEnd() && lexer.readToken().rawValue.compare("]") != 0)
 		{
@@ -140,6 +141,7 @@ namespace Jsonify
 		lexer.nextToken();
 
 		JsonValue dict;
+		dict.setType(JsonValue::Type::Dictionary);
 
 		while (!lexer.isEnd() && lexer.readToken().rawValue.compare("}") != 0)
 		{

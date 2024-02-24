@@ -400,4 +400,9 @@ namespace Jsonify
 			break;
 		}
 	}
+	
+	JsonValue::Type JsonValue::getType() const
+	{
+		return type;
+	}
 }
